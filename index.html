@@ -35,11 +35,22 @@
             <li class="tab-item" data-tab="stickers-tab">Sticker Gallery</li>
         </ul>
 
-        <!-- Background Gallery -->
+        <!-- Background Gallery Tab -->
         <div id="images-tab" class="tab-content active">
-            <!-- File upload for custom background images (optional) -->
+
+            <!-- Category Filter -->
+            <div class="background-filter">
+                <label for="bg-category-select">Category:</label>
+                <select id="bg-category-select" onchange="filterBackgrounds()">
+                    <option value="all">All</option>
+                    <option value="general">General Drafts</option>
+                    <option value="wassie">Wassie Memes</option>
+                </select>
+            </div>
+
+            <!-- Upload without Pictures -->
             <div class="upload-section">
-                <label for="uploadBackgroundImages">Upload your own background images:</label>
+                <label for="uploadBackgroundImages">Upload your own background:</label>
                 <input
                         type="file"
                         id="uploadBackgroundImages"
@@ -47,10 +58,12 @@
                         multiple
                 />
             </div>
+
+            <!-- Gallery for backgrounds -->
             <div class="gallery" id="background-gallery">
-                <!-- This will be filled automatically in app.js from our array -->
             </div>
         </div>
+
 
         <!-- Sticker Gallery -->
         <div id="stickers-tab" class="tab-content">

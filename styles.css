@@ -328,4 +328,49 @@ h1 {
     background-color: #258;
 }
 
+/* Stil für den Kategoriefilter */
+.background-filter {
+    background-color: #f0f0f0; /* Heller Hintergrund für Kontrast */
+    border: 2px solid #36a;    /* Blaue Rahmenlinie */
+    border-radius: 8px;         /* Abgerundete Ecken */
+    padding: 15px;              /* Innenabstand */
+    margin-bottom: 20px;        /* Abstand nach unten */
+    text-align: center;         /* Zentrierter Inhalt */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+.background-filter label {
+    font-weight: bold;          /* Fettdruck für das Label */
+    margin-right: 10px;         /* Abstand zwischen Label und Select */
+    font-size: 1.1em;           /* Etwas größere Schrift */
+}
+
+.background-filter select {
+    padding: 8px 12px;          /* Innenabstand im Dropdown */
+    font-size: 1em;             /* Schriftgröße */
+    border: 1px solid #ccc;     /* Rahmenlinie */
+    border-radius: 4px;         /* Abgerundete Ecken */
+    background-color: #fff;     /* Weißer Hintergrund */
+    cursor: pointer;            /* Cursor als Pointer */
+    transition: border-color 0.3s ease; /* Übergangseffekt bei Hover */
+}
+
+.background-filter select:hover {
+    border-color: #36a;         /* Rahmenfarbe beim Hover */
+}
+
+/* Optional: Responsive Anpassungen */
+@media (max-width: 600px) {
+    .background-filter {
+        padding: 10px;
+    }
+
+    .background-filter label,
+    .background-filter select {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
 
