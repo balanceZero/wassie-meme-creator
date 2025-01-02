@@ -71,20 +71,19 @@ function handleSelection(e) {
 // -------------------------
 function selectBackground(imgUrl) {
     fabric.Image.fromURL(imgUrl, function(img) {
+        // Canvas is square: 800 x 800 (or whatever you set)
         const canvasWidth = canvas.getWidth();
         const canvasHeight = canvas.getHeight();
 
-        // Calculate the ratio to fill the canvas entirely
-        const scaleRatio = Math.max(
+        // scaleRatio ensures the image fits within the canvas
+        const scaleRatio = Math.min(
             canvasWidth / img.width,
             canvasHeight / img.height
         );
 
-        // Scale the image
         img.scale(scaleRatio);
 
-        // Position it in the center
-        // (originX and originY "center" means we place image's center at given left/top)
+        // Center the image
         canvas.setBackgroundImage(
             img,
             canvas.renderAll.bind(canvas),
@@ -97,6 +96,7 @@ function selectBackground(imgUrl) {
         );
     });
 }
+
 
 // -------------------------
 // DELETE
@@ -186,22 +186,23 @@ function applyTextFormat() {
         return;
     }
 
+    // 1) Get color and font
     const colorPicker = document.getElementById('text-color-picker');
-    const fontSizeInput = document.getElementById('text-font-size');
-    const textAlignSelect = document.getElementById('text-align');
-
     const newColor = colorPicker.value;
-    const newFontSize = parseInt(fontSizeInput.value, 10);
-    const newTextAlign = textAlignSelect.value;
 
+    const fontSelect = document.getElementById('font-family-select');
+    const newFontFamily = fontSelect.value;
+
+    // 2) Apply them to the active text object
     selectedObject.set({
         fill: newColor,
-        fontSize: newFontSize,
-        textAlign: newTextAlign
+        fontFamily: newFontFamily
     });
 
+    // 3) Re-render canvas
     canvas.renderAll();
 }
+
 
 // -------------------------
 // UPLOAD HANDLER
