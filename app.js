@@ -58,6 +58,18 @@ const allBackgrounds = [
     { name: "gen27.png", url: "assets/images/gen27.png", category: "general" },
     { name: "gen28.jpg", url: "assets/images/gen28.jpg", category: "general" },
     { name: "gen29.jpg", url: "assets/images/gen29.jpg", category: "general" }
+    { name: "gen30.jpg", url: "assets/images/gen16.jpg", category: "general" },
+    { name: "gen31.jpg", url: "assets/images/gen17.jpg", category: "general" },
+    { name: "gen32.jpg", url: "assets/images/gen18.jpg", category: "general" },
+    { name: "gen33.jpg", url: "assets/images/gen19.jpg", category: "general" },
+    { name: "gen34.jpg", url: "assets/images/gen20.jpg", category: "general" },
+    { name: "gen35.jpg", url: "assets/images/gen21.jpg", category: "general" },
+    { name: "gen36.jpg", url: "assets/images/gen22.jpg", category: "general" },
+    { name: "gen37.jpg", url: "assets/images/gen23.jpg", category: "general" },
+    { name: "gen38.jpg", url: "assets/images/gen24.jpg", category: "general" },
+    { name: "gen39.jpg", url: "assets/images/gen25.jpg", category: "general" },
+    { name: "gen40.jpg", url: "assets/images/gen26.jpg", category: "general" },
+    { name: "gen41.png", url: "assets/images/gen27.png", category: "general" },
 ];
 
 
