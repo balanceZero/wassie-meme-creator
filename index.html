@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Wassify your Meme</title>
+    <!-- Fabric.js (from a CDN, version can be updated if needed) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Top banner with an image -->
+<header class="top-banner">
+    <img src="assets/images/bannertop.png" alt="Top Banner" class="banner-image" />
+</header>
+
+<main class="main-content">
+    <h1>Are you fucking lazy or are you near your 14 day limit?</h1>
+    <p class="intro-text">
+        ... then hurry and use that garbage creator below and dump your wassified meme on x.com !<br><br>
+        any follow
+        <a class="mention-fiat" href="https://x.com/fiat_scare" target="_blank">@fiat_scare</a>
+        would be much appreciated.<br><br>
+        and don't forget to spread the word of holy wassification by tagging
+        <a class="mention-wassie" href="https://x.com/wassie" target="_blank">@wassie</a> <br><br>
+        (this meme creator is purely made out of fun by me and has no relation to the creators / team of wassieverse).
+    </p>
+
+
+
+    <!-- Tabs for Backgrounds & Stickers -->
+    <div class="tabs">
+        <ul class="tab-list">
+            <li class="tab-item active" data-tab="images-tab">Background Gallery</li>
+            <li class="tab-item" data-tab="stickers-tab">Sticker Gallery</li>
+        </ul>
+
+        <!-- Background Gallery -->
+        <div id="images-tab" class="tab-content active">
+            <!-- File upload for custom background images (optional) -->
+            <div class="upload-section">
+                <label for="uploadBackgroundImages">Upload your own background images:</label>
+                <input
+                        type="file"
+                        id="uploadBackgroundImages"
+                        accept="image/*"
+                        multiple
+                />
+            </div>
+            <div class="gallery" id="background-gallery">
+                <!-- This will be filled automatically in app.js from our array -->
+            </div>
+        </div>
+
+        <!-- Sticker Gallery -->
+        <div id="stickers-tab" class="tab-content">
+            <!-- File upload for custom stickers (optional) -->
+            <div class="upload-section">
+                <label for="uploadStickers">Upload your own stickers:</label>
+                <input
+                        type="file"
+                        id="uploadStickers"
+                        accept="image/*"
+                        multiple
+                />
+            </div>
+            <div class="gallery" id="sticker-gallery">
+                <!-- Filled automatically from our array -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Text Section -->
+    <div class="text-section">
+        <h2>Add Meme Text</h2>
+        <div class="text-controls">
+            <input type="text" id="meme-text-input" placeholder="Your meme text here..." />
+            <button class="primary-btn" onclick="addText()">Add Text</button>
+        </div>
+        <div class="text-suggestions">
+            <p>Suggested texts:</p>
+            <button onclick="useSuggestion('Wassup?')">Wassup?</button>
+            <button onclick="useSuggestion('Deal with it')">Deal with it</button>
+        </div>
+    </div>
+
+    <!-- Text Formatting Section -->
+    <div class="text-format-section">
+        <h3>Text Formatting</h3>
+        <div class="format-group">
+            <label>Color:</label>
+            <input type="color" id="text-color-picker" value="#000000" />
+        </div>
+        <div class="format-group">
+            <label>Font Size:</label>
+            <input type="number" id="text-font-size" value="40" min="8" max="200" />
+        </div>
+        <div class="format-group">
+            <label>Alignment:</label>
+            <select id="text-align">
+                <option value="left">Left</option>
+                <option value="center" selected>Center</option>
+                <option value="right">Right</option>
+            </select>
+        </div>
+        <button class="primary-btn" onclick="applyTextFormat()">Apply</button>
+    </div>
+
+    <!-- Editor Area -->
+    <div class="editor-container">
+        <canvas id="meme-canvas" width="800" height="600"></canvas>
+    </div>
+
+    <button onclick="deleteSelected()" class="delete-button">Delete Selected</button>
+
+    <!-- Export Button -->
+    <button class="export-button" onclick="exportMeme()">Save Meme</button>
+
+</main>
+
+<!-- Bottom banner -->
+<footer class="bottom-banner">
+    <img src="assets/images/banner.jpg" alt="Bottom Banner" class="banner-image" />
+    <p>&copy; Wassie Meme Creator Version 0.69</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

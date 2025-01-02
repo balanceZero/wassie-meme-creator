@@ -1,0 +1,283 @@
+/* Basic reset and body styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f6f7f9;
+    color: #333;
+}
+
+/* Top banner / header */
+.top-banner {
+    width: 100%;
+    background: white;
+    text-align: center;
+    text-align: center;
+}
+
+.banner-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Bottom banner / footer */
+.bottom-banner {
+    background: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Main content layout */
+.main-content {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Tabs */
+.tabs {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.tab-list {
+    list-style: none;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-right: 1px solid #ddd;
+    background-color: #f9f9f9;
+    user-select: none;
+}
+
+.tab-item:last-child {
+    border-right: none;
+}
+
+.tab-item.active {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding: 10px 15px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.gallery img {
+    width: 120px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    border-color: #36a;
+}
+
+/* Upload Section */
+.upload-section {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.upload-section label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Text Section */
+.text-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.text-section h2 {
+    margin-bottom: 10px;
+}
+
+.text-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.text-controls input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.text-controls .primary-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #36a;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.text-controls .primary-btn:hover {
+    background-color: #258;
+}
+
+.text-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.text-suggestions p {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.text-suggestions button {
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.text-suggestions button:hover {
+    background-color: #ddd;
+}
+
+/* Text Format Section */
+.text-format-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.text-format-section h3 {
+    margin-bottom: 10px;
+}
+
+.format-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.format-group label {
+    min-width: 80px;
+    font-weight: bold;
+}
+
+/* Editor */
+.editor-container {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+#meme-canvas {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+
+/* Export Button */
+.export-button {
+    margin: 15px 0;
+    padding: 12px 20px;
+    background-color: green;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.export-button:hover {
+    background-color: #258;
+}
+
+/* Export Button */
+.delete-button {
+    margin: 15px 0;
+    padding: 12px 20px;
+    background-color: darkred;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.delete-button:hover {
+    background-color: #258;
+}
+
+.mention-fiat {
+    color: #FF5733;       /* example orange/red */
+    font-weight: bold;
+    text-decoration: none; /* remove default underline, if desired */
+}
+
+.mention-wassie {
+    color: #0366d6;       /* example blue */
+    font-weight: bold;
+    text-decoration: none; /* remove default underline, if desired */
+}
+
+/* Optional: add a hover effect */
+.mention-fiat:hover,
+.mention-wassie:hover {
+    text-decoration: underline;
+}
+
