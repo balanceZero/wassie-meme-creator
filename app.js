@@ -1,17 +1,49 @@
 // Default arrays
 const defaultBackgrounds = [
-    { name: "wassie_bird1.jpg", url: "assets/images/wassie_bird1.jpg" },
-    { name: "wassie_kill1.png", url: "assets/images/wassie_kill1.png" },
-    { name: "wassie_prosit1.jpg", url: "assets/images/wassie_prosit1.jpg" },
-    { name: "wassie_trump1.jpg", url: "assets/images/wassie_trump1.jpg" }
+    { name: "pic1.jpg", url: "assets/images/pic1.jpg" },
+    { name: "pic2.jpg", url: "assets/images/pic2.jpg" },
+    { name: "pic3.jpg", url: "assets/images/pic3.jpg" },
+    { name: "pic4.jpg", url: "assets/images/pic4.jpg" },
+    { name: "pic5.jpg", url: "assets/images/pic5.jpg" },
+    { name: "pic6.jpg", url: "assets/images/pic6.jpg" },
+    { name: "pic7.jpg", url: "assets/images/pic7.jpg" },
+    { name: "pic8.jpg", url: "assets/images/pic8.jpg" },
+    { name: "pic9.jpg", url: "assets/images/pic9.jpg" },
+    { name: "pic10.jpg", url: "assets/images/pic10.jpg" },
+    { name: "pic11.jpg", url: "assets/images/pic11.jpg" },
+    { name: "pic12.jpg", url: "assets/images/pic12.jpg" },
+    { name: "pic13.jpg", url: "assets/images/pic13.jpg" },
+    { name: "pic14.jpg", url: "assets/images/pic14.jpg" },
+    { name: "pic15.jpg", url: "assets/images/pic15.jpg" },
+    { name: "pic16.jpg", url: "assets/images/pic16.jpg" },
+    { name: "pic17.jpg", url: "assets/images/pic17.jpg" },
+    { name: "pic18.jpg", url: "assets/images/pic18.jpg" },
+    { name: "pic19.jpg", url: "assets/images/pic19.jpg" },
+    { name: "pic20.jpg", url: "assets/images/pic20.jpg" },
+    { name: "pic21.jpg", url: "assets/images/pic21.jpg" },
+    { name: "pic22.jpg", url: "assets/images/pic22.jpg" },
+    { name: "pic23.jpg", url: "assets/images/pic23.jpg" },
+    { name: "pic24.jpg", url: "assets/images/pic24.jpg" },
+    { name: "pic25.jpg", url: "assets/images/pic25.jpg" },
+    { name: "pic26.jpg", url: "assets/images/pic26.jpg" },
+    { name: "pic27.png", url: "assets/images/pic27.png" },
+    { name: "pic28.jpg", url: "assets/images/pic28.jpg" },
+    { name: "pic29.jpg", url: "assets/images/pic29.jpg" }
 ];
 
 const defaultStickers = [
-    { name: "wassie-sticker_fed1.png", url: "assets/stickers/wassie-sticker_fed1.png" },
-    { name: "wassie-sticker_gun1.png", url: "assets/stickers/wassie-sticker_gun1.png" },
-    { name: "wassie-sticker_hair.png", url: "assets/stickers/wassie-sticker_hair.png" },
-    { name: "wassie-sticker_monad1.jpg", url: "assets/stickers/wassie-sticker_monad1.jpg" },
-    { name: "wassie-sticker_natural1.jpg", url: "assets/stickers/wassie-sticker_natural1.jpg" }
+    { name: "sticker1.png", url: "assets/stickers/sticker1.png" },
+    { name: "sticker2.png", url: "assets/stickers/sticker2.png" },
+    { name: "sticker3.png", url: "assets/stickers/sticker3.png" },
+    { name: "sticker4.png", url: "assets/stickers/sticker4.png" },
+    { name: "sticker5.png", url: "assets/stickers/sticker5.png" },
+    { name: "sticker6.png", url: "assets/stickers/sticker6.png" },
+    { name: "sticker7.png", url: "assets/stickers/sticker7.png" },
+    { name: "sticker8.png", url: "assets/stickers/sticker8.png" },
+    { name: "sticker9.png", url: "assets/stickers/sticker9.png" },
+    { name: "sticker10.png", url: "assets/stickers/sticker10.png" },
+    { name: "sticker11.png", url: "assets/stickers/sticker11.png" },
+    { name: "sticker12.png", url: "assets/stickers/sticker12.png" },
 ];
 
 // Fabric.js canvas reference
@@ -97,6 +129,48 @@ function selectBackground(imgUrl) {
     });
 }
 
+// -------------------------
+// BAR PICTURE
+// -------------------------
+
+function addBar() {
+    // Get the chosen color
+    const barColorInput = document.getElementById('bar-color-picker');
+    const barColor = barColorInput.value || '#000000';
+
+    // Create a rectangle in Fabric
+    const rectObj = new fabric.Rect({
+        left: canvas.width / 2,
+        top: canvas.height / 2,
+        originX: 'center',
+        originY: 'center',
+        width: 200,
+        height: 50,
+        fill: barColor,
+        selectable: true,
+        hasRotatingPoint: true,
+    });
+
+    // Add rectangle to canvas
+    canvas.add(rectObj);
+
+    // Bring rectangle to the frontmost layer
+    canvas.bringToFront(rectObj);
+
+    // Render the canvas so we see the new bar
+    canvas.renderAll();
+}
+
+function applyBarColor() {
+    const activeObj = canvas.getActiveObject();
+    if (!activeObj || activeObj.type !== 'rect') {
+        alert('Please select a bar (rectangle) first!');
+        return;
+    }
+    const barColorInput = document.getElementById('bar-color-picker').value;
+    activeObj.set({ fill: barColorInput });
+    canvas.renderAll();
+}
 
 // -------------------------
 // DELETE

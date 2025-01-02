@@ -87,14 +87,10 @@
     <!-- Text Formatting Section -->
     <div class="text-format-section">
         <h3>Text Formatting</h3>
-
-        <!-- Color picker remains -->
         <div class="format-group">
             <label>Color:</label>
             <input type="color" id="text-color-picker" value="#000000" />
         </div>
-
-        <!-- New Font-Family Select -->
         <div class="format-group">
             <label>Font:</label>
             <select id="font-family-select">
@@ -103,11 +99,20 @@
                 <option value="Helvetica">Helvetica</option>
                 <option value="Times New Roman">Times New Roman</option>
                 <option value="Comic Sans MS">Comic Sans MS</option>
-                <!-- Add or remove fonts as desired -->
             </select>
         </div>
-
         <button class="primary-btn" onclick="applyTextFormat()">Apply</button>
+    </div>
+
+    <!-- Bar Section  -->
+    <div class="bar-section">
+        <h3>Add Redaction Bar</h3>
+        <div class="bar-controls">
+            <label for="bar-color-picker">Color:</label>
+            <input type="color" id="bar-color-picker" value="#000000" />
+            <button class="primary-btn" onclick="addBar()">Add Bar</button>
+            <button class="primary-btn" onclick="applyBarColor()">Apply Bar Color</button>
+        </div>
     </div>
 
     <!-- Editor Area -->
@@ -115,9 +120,8 @@
         <canvas id="meme-canvas" width="800" height="800"></canvas>
     </div>
 
+    <!-- Action Buttons -->
     <button onclick="deleteSelected()" class="delete-button">Delete Selected</button>
-
-    <!-- Export Button -->
     <button class="export-button" onclick="exportMeme()">Save Meme</button>
 
 </main>
