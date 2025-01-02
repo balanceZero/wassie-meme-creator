@@ -69,7 +69,7 @@ const allBackgrounds = [
     { name: "gen38.jpg", url: "assets/images/gen24.jpg", category: "general" },
     { name: "gen39.jpg", url: "assets/images/gen25.jpg", category: "general" },
     { name: "gen40.jpg", url: "assets/images/gen26.jpg", category: "general" },
-    { name: "gen41.png", url: "assets/images/gen27.png", category: "general" },
+    { name: "gen41.png", url: "assets/images/gen27.png", category: "general" }
 ];
 
 
