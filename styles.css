@@ -281,3 +281,12 @@ h1 {
     text-decoration: underline;
 }
 
+.legal-link {
+    color: #0366d6;  /* or any color you like */
+    text-decoration: none;
+}
+
+.legal-link:hover {
+    text-decoration: underline;
+}
+
